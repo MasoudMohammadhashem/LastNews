@@ -2,23 +2,18 @@ package com.mohammadhashem.lastnews.presentation.ui.fragment.mainfragment.viewmo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.mohammadhashem.lastnews.common.constants.API_KEY
 import com.mohammadhashem.lastnews.common.utils.observable.NewsSingleObservable
 import com.mohammadhashem.lastnews.data.model.SourcesResponse
-import com.mohammadhashem.lastnews.domain.usecases.sources.GetAllSourceUseCases
+import com.mohammadhashem.lastnews.domain.usecases.sources.AllUseCasesSource
 import com.mohammadhashem.lastnews.presentation.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val getAllSourceUseCases: GetAllSourceUseCases) :
-    BaseViewModel() {
+class MainViewModel @Inject constructor(private val allUseCasesSource: AllUseCasesSource) : BaseViewModel() {
     private val _sourceList = MutableLiveData<SourcesResponse>()
     var sourceList: LiveData<SourcesResponse> = _sourceList
 
@@ -29,7 +24,7 @@ class MainViewModel @Inject constructor(private val getAllSourceUseCases: GetAll
 
     private fun fetchData() {
         try {
-            getAllSourceUseCases.getAllRemoteUseCase(API_KEY)
+            allUseCasesSource.getAllRemoteUseCase(API_KEY)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { loading.setValue(true) }

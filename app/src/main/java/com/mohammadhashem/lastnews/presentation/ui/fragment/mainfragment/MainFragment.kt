@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohammadhashem.lastnews.R
 import com.mohammadhashem.lastnews.common.utils.imageloader.GlideImageLoader
+import com.mohammadhashem.lastnews.data.model.SourceX
 import com.mohammadhashem.lastnews.databinding.FragmentMainBinding
 import com.mohammadhashem.lastnews.presentation.ui.adapter.listerner.OnClickAdapter
 import com.mohammadhashem.lastnews.presentation.ui.adapter.sources.SourcesAdapter
@@ -55,9 +56,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>(), OnClickAdapter {
         })
     }
 
-    override fun onClickRoot(SourceId: String) {
+    override fun onClickRoot(SourceId: String,SourceName: String) {
         val bundle = Bundle()
-        bundle.putString("SourceId",SourceId)
+        val source = SourceX(SourceId,SourceName)
+        bundle.putParcelable("sourceX", source)
         findNavController().navigate(R.id.action_mainFragment_to_newsFragment,bundle)
     }
 

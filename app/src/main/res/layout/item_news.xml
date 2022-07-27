@@ -32,19 +32,13 @@
                 android:layout_alignBottom="@id/img"
                 android:src="@drawable/background_shadow" />
 
-            <ProgressBar
-                android:id="@+id/prograss_load_photo"
-                style="@android:style/Widget.Holo.ProgressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="70dp" />
-
 
             <FrameLayout
                 android:id="@+id/layoutDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/img"
+                android:alpha="0.5"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="-50dp"
@@ -58,10 +52,10 @@
                     android:layout_height="18dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_date" />
 
                 <TextView
-                    android:id="@+id/publishedAt"
+                    android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="27dp"
@@ -76,7 +70,7 @@
 
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/img"
@@ -91,20 +85,20 @@
 
 
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/tv_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/title"
+                android:layout_below="@id/tv_title"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"
                 android:text="Desc" />
 
             <TextView
-                android:id="@+id/source"
+                android:id="@+id/tv_source"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_below="@id/desc"
+                android:layout_below="@id/tv_desc"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
@@ -119,15 +113,15 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/author"
+                android:id="@+id/tv_author"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_below="@id/desc"
+                android:layout_below="@id/tv_desc"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@id/source"
+                android:layout_toRightOf="@id/tv_source"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-light"

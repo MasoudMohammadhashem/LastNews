@@ -1,7 +1,9 @@
 package com.mohammadhashem.lastnews.domain.di
 
+import com.mohammadhashem.lastnews.data.repository.articles.ArticlesRepository
 import com.mohammadhashem.lastnews.data.repository.sources.SourcesRepository
-import com.mohammadhashem.lastnews.domain.usecases.sources.GetAllSourceUseCases
+import com.mohammadhashem.lastnews.domain.usecases.articles.*
+import com.mohammadhashem.lastnews.domain.usecases.sources.AllUseCasesSource
 import com.mohammadhashem.lastnews.domain.usecases.sources.GetSourceRemoteUseCase
 import dagger.Module
 import dagger.Provides
@@ -15,10 +17,19 @@ class UseCaseModule {
 
     @Singleton
     @Provides
-    fun provideProductUseCase(repository: SourcesRepository) =
-        GetAllSourceUseCases(
+    fun provideSourceUseCase(repository: SourcesRepository) =
+        AllUseCasesSource(
             GetSourceRemoteUseCase(repository)
         )
 
+    @Singleton
+    @Provides
+    fun provideArticleUseCase(repository: ArticlesRepository) =
+        AllUseCaseArticles(
+            AddArticleToCacheUseCase(repository),
+            DeleteArticlesCacheUseCase(repository),
+            GetAllCacheArticleUseCase(repository),
+            GetAllRemoteArticleUseCase(repository)
 
+        )
 }

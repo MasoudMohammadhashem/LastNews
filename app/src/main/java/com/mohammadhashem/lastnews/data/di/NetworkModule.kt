@@ -3,6 +3,9 @@ package com.mohammadhashem.lastnews.data.di
 import com.google.gson.Gson
 import com.mohammadhashem.lastnews.common.constants.BASE_URL
 import com.mohammadhashem.lastnews.data.api.ApiNews
+import com.mohammadhashem.lastnews.data.repository.articles.datasource.DataSourceArticles
+import com.mohammadhashem.lastnews.data.repository.articles.datasource.remote.DataSourceRemoteArticles
+import com.mohammadhashem.lastnews.data.repository.articles.datasource.remote.DataSourceRemoteArticlesImpl
 import com.mohammadhashem.lastnews.data.repository.sources.datasource.DataSourceSources
 import com.mohammadhashem.lastnews.data.repository.sources.datasource.remote.DataSourceSourcesRemote
 import com.mohammadhashem.lastnews.data.repository.sources.datasource.remote.DataSourceSourcesRemoteImpl
@@ -44,5 +47,9 @@ class NetworkModule {
         return DataSourceSourcesRemoteImpl(api)
     }
 
-
+    @Singleton
+    @Provides
+    fun provideDataSourceRemoteArticles(api: ApiNews): DataSourceRemoteArticles {
+        return DataSourceRemoteArticlesImpl(api)
+    }
 }

@@ -12,7 +12,7 @@ interface ApiNews {
     fun getSources(@Query("apiKey") apiKey: String): Single<SourcesResponse>
 
     //https://newsapi.org/v2/everything?sources=abc-news&page=1&pageSize=20&apiKey=5cad169ddca3463ea68641e872efd90d انتخاب من 20 پیج در هر ریکویست
-    @GET("top-headlines")
+    @GET("v2/everything")
     fun getHeadlines(
         @Query("sources") sourcesId: String,
         @Query("page") page: Int,

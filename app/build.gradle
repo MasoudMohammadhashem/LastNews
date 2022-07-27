@@ -70,7 +70,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room"
     implementation "androidx.room:room-ktx:$room"
     kapt "androidx.room:room-compiler:$room"
-    implementation "androidx.room:room-testing:$room"
+    implementation "androidx.room:room-rxjava3:$room"
 
     //RxJava
     implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
