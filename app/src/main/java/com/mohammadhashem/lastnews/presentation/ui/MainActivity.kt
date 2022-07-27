@@ -1,7 +1,8 @@
-package com.mohammadhashem.lastnews
+package com.mohammadhashem.lastnews.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mohammadhashem.lastnews.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
