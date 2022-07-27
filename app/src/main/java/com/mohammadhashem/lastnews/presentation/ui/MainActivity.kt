@@ -1,11 +1,13 @@
 package com.mohammadhashem.lastnews.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.mohammadhashem.lastnews.R
 import com.mohammadhashem.lastnews.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,5 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        val navHostFragment =
 //            supportFragmentManager.findFragmentById(R.id.fc_main) as NavHostFragment
+
+
     }
 }

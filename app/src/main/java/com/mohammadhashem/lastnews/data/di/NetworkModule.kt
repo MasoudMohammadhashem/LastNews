@@ -3,6 +3,9 @@ package com.mohammadhashem.lastnews.data.di
 import com.google.gson.Gson
 import com.mohammadhashem.lastnews.common.constants.BASE_URL
 import com.mohammadhashem.lastnews.data.api.ApiNews
+import com.mohammadhashem.lastnews.data.repository.sources.datasource.DataSourceSources
+import com.mohammadhashem.lastnews.data.repository.sources.datasource.remote.DataSourceSourcesRemote
+import com.mohammadhashem.lastnews.data.repository.sources.datasource.remote.DataSourceSourcesRemoteImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +22,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideGson(): Gson? {
+    fun provideGson(): Gson {
         return Gson()
     }
 
@@ -33,6 +36,12 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(ApiNews::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDataSourceRemoteSources(api: ApiNews): DataSourceSources {
+        return DataSourceSourcesRemoteImpl(api)
     }
 
 
