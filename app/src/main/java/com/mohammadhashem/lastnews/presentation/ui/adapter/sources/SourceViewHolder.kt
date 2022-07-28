@@ -1,8 +1,6 @@
 package com.mohammadhashem.lastnews.presentation.ui.adapter.sources
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import com.mohammadhashem.lastnews.common.utils.imageloader.GlideImageLoader
 import com.mohammadhashem.lastnews.data.model.Source
 import com.mohammadhashem.lastnews.databinding.ItemSourcesBinding
@@ -22,7 +20,6 @@ class SourceViewHolder(
         binding.tvSourceCat.text = currentSource.category
         binding.tvSourceLang.text = currentSource.language
         binding.tvSourceCountry.text = currentSource.country
-        binding.root.transitionName = "transition" + currentSource.name;
         binding.root.setOnClickListener { onclick.onClickRoot(currentSource.id,currentSource.name) }
         binding.tvLink.setOnClickListener { onclick.onClickLink(currentSource.url) }
     }

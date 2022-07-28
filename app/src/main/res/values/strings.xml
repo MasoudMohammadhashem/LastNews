@@ -8,4 +8,5 @@
     <string name="link">link</string>
     <string name="title">Title</string>
     <string name="desc">Desc</string>
+    <string name="source">Source</string>
 </resources>

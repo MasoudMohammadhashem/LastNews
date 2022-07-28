@@ -40,7 +40,7 @@ class ArticlePagingAdapter : PagingDataAdapter<Article, ArticleViewHolder>(COMPA
     companion object {
         private val COMPARATOR = object : DiffUtil.ItemCallback<Article>() {
             override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
-                return oldItem.url == newItem.url
+                return oldItem.url == newItem.url || oldItem.title == newItem.title
             }
 
             override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {

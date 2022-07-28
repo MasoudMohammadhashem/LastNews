@@ -1,6 +1,5 @@
 package com.mohammadhashem.lastnews.presentation.ui.adapter.sources
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +7,6 @@ import com.mohammadhashem.lastnews.common.utils.imageloader.GlideImageLoader
 import com.mohammadhashem.lastnews.data.model.Source
 import com.mohammadhashem.lastnews.databinding.ItemSourcesBinding
 import com.mohammadhashem.lastnews.presentation.ui.adapter.listerner.OnClickAdapter
-import javax.inject.Inject
 
 class SourcesAdapter : RecyclerView.Adapter<SourceViewHolder>() {
 

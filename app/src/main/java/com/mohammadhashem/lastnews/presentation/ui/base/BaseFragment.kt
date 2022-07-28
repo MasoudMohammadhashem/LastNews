@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.ComponentActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.transition.MaterialElevationScale
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -28,6 +31,8 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        exitTransition = MaterialElevationScale(false);
+        reenterTransition = MaterialElevationScale(true);
         _binding = this.setBinding()
 
         return binding.root
@@ -56,6 +61,5 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         return requireActivity().baseContext.resources.configuration.uiMode and
                 Configuration.UI_MODE_NIGHT_MASK
     }
-
 
 }
