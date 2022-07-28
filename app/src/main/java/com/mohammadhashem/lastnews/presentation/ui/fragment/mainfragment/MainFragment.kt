@@ -24,6 +24,7 @@ import javax.inject.Inject
 class MainFragment : BaseFragment<FragmentMainBinding>(), OnClickAdapter {
 
     private val viewModel: MainViewModel by viewModels()
+
     @Inject
     lateinit var imageLoader: GlideImageLoader
 

@@ -13,7 +13,6 @@ import com.mohammadhashem.lastnews.data.model.SourceX
 import com.mohammadhashem.lastnews.databinding.FragmentNewsBinding
 import com.mohammadhashem.lastnews.presentation.ui.adapter.articles.ArticlesAdapter
 import com.mohammadhashem.lastnews.presentation.ui.adapter.listerner.OnClickAdapter
-import com.mohammadhashem.lastnews.presentation.ui.adapter.sources.SourcesAdapter
 import com.mohammadhashem.lastnews.presentation.ui.base.BaseFragment
 import com.mohammadhashem.lastnews.presentation.ui.fragment.secondfragment.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,8 +50,8 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>(),OnClickAdapter {
             val adapter = ArticlesAdapter()
             binding.rvArticles.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            binding.rvArticles.adapter = adapter
             adapter.setData(it,this,imageLoader)
+            binding.rvArticles.adapter = adapter
         })
     }
 

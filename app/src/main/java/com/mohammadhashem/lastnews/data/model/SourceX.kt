@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class SourceX(
-    val id: String,
-    val name: String
+    var id: String,
+    var name: String
 ):Parcelable
