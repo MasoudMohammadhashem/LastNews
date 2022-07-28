@@ -62,7 +62,6 @@
                     android:layout_marginLeft="27dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
-                    android:text="01 January 1990"
                     android:textColor="#606060" />
 
 
@@ -78,7 +77,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Title"
+                android:text="@string/title"
                 android:textColor="#161617"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -92,7 +91,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"
-                android:text="Desc" />
+                android:text="@string/desc" />
 
             <TextView
                 android:id="@+id/tv_source"

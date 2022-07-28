@@ -71,4 +71,5 @@ class NetworkModule {
     fun provideDataSourceRemoteArticles(api: ApiNews): DataSourceRemoteArticles {
         return DataSourceRemoteArticlesImpl(api)
     }
+
 }

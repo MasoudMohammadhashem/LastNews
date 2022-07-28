@@ -11,7 +11,7 @@ data class Article(
     val publishedAt: String,
     val source: SourceX,
     val title: String,
-    @PrimaryKey
+    @PrimaryKey  //This is not a good choice but this is the only unit field
     val url: String,
     val urlToImage: String
 )

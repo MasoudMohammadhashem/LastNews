@@ -6,15 +6,6 @@ import com.google.gson.reflect.TypeToken
 import com.mohammadhashem.lastnews.data.model.SourceX
 
 class Converters {
-//    @TypeConverter
-//    fun toSourseXType(value: String): SourceX {
-//        return SourceX.valueOf(value)
-//    }
-//
-//    @TypeConverter
-//    fun fromSourseXType(value: SourceX): String {
-//        return value.name
-//    }
 
     @TypeConverter
     fun fromString(value: String): SourceX {

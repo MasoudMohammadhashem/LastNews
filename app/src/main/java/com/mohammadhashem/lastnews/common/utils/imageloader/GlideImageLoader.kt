@@ -11,12 +11,12 @@ import javax.inject.Singleton
 @Singleton
 class GlideImageLoader @Inject constructor(@ApplicationContext val context: Context):
     ImageLoadingService {
-    override fun loadImage(imageView: ImageView, imageUrl: String) {
+    override fun loadImage(imageView: ImageView, imageUrl: String?) {
         val imageViewReference: WeakReference<ImageView> = WeakReference(imageView)
         val imageView2 = imageViewReference.get()
         if (imageView2 != null) {
             Glide.with(context)
-                .load(imageUrl)
+                .load(imageUrl?:"https://media4.s-nbcnews.com/j/newscms/2019_01/2705191/nbc-social-default_b6fa4fef0d31ca7e8bc7ff6d117ca9f4.nbcnews-fp-1024-512.png")
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .skipMemoryCache(false) //
                 //            .placeholder(R.drawable.holder)

@@ -4,5 +4,5 @@ import android.widget.ImageView
 
 
 interface ImageLoadingService {
-    fun loadImage(imageView: ImageView, imageUrl: String)
+    fun loadImage(imageView: ImageView, imageUrl: String?)
 }

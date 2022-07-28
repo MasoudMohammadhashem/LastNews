@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">LastNews</string>
+    <string name="tv_source_title">tv_source_title</string>
+    <string name="tv_source_cat">tv_source_cat</string>
+    <string name="tv_source_lang">tv_source_lang</string>
+    <string name="tv_source_country">tv_source_country</string>
+    <string name="tv_source_des">tv_source_des</string>
+    <string name="link">link</string>
+    <string name="title">Title</string>
+    <string name="desc">Desc</string>
 </resources>

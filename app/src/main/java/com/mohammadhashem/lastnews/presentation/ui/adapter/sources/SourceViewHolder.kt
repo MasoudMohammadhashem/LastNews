@@ -22,6 +22,7 @@ class SourceViewHolder(
         binding.tvSourceCat.text = currentSource.category
         binding.tvSourceLang.text = currentSource.language
         binding.tvSourceCountry.text = currentSource.country
+        binding.root.transitionName = "transition" + currentSource.name;
         binding.root.setOnClickListener { onclick.onClickRoot(currentSource.id,currentSource.name) }
         binding.tvLink.setOnClickListener { onclick.onClickLink(currentSource.url) }
     }

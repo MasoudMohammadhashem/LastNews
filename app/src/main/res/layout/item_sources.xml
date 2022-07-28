@@ -3,6 +3,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:focusable="true"
@@ -19,83 +20,89 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/tv_source_title"
+        <LinearLayout
+            android:id="@+id/lin_info"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:ellipsize="end"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-light"
-            android:maxLines="3"
-            android:text="tv_source_title"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp" />
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_source_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/tv_source_title"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_source_cat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@string/tv_source_cat"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_source_lang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@string/tv_source_lang"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_source_country"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@string/tv_source_country"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/tv_source_des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/lin_info"
-            android:layout_below="@+id/tv_source_title"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_above="@+id/tv_link"
+            android:layout_below="@+id/lin_info"
+            android:background="#EAF0F1"
+            android:ellipsize="end"
+            android:paddingTop="5dp"
             android:fontFamily="sans-serif-thin"
             android:maxLines="3"
-            android:ellipsize="end"
-            android:text="tv_source_des"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/tv_source_des"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="12sp" />
-        <LinearLayout
-            android:id="@+id/lin_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_above="@+id/tv_link"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tv_source_cat"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:text="tv_source_cat"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp" />
-            <TextView
-                android:id="@+id/tv_source_lang"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:text="tv_source_lang"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp" />
-            <TextView
-                android:id="@+id/tv_source_country"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:text="tv_source_country"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp" />
-        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_link"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_alignParentBottom="true"
-            android:background="?android:attr/selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#EEF0F6"
             android:clickable="true"
             android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
             android:focusable="true"
@@ -104,8 +111,9 @@
             android:paddingTop="8dp"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:text="link"
+            android:text="@string/link"
             android:textColor="#015FAA"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:ignore="UnusedAttribute" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
