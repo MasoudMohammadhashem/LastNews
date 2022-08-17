@@ -8,16 +8,17 @@ import com.mohammadhashem.lastnews.common.constants.API_KEY
 import com.mohammadhashem.lastnews.common.constants.PageSize
 import com.mohammadhashem.lastnews.data.api.ApiNews
 import com.mohammadhashem.lastnews.data.model.Article
-import com.mohammadhashem.lastnews.data.model.ArticlesResponse
 import com.mohammadhashem.lastnews.data.model.SourceX
 import com.mohammadhashem.lastnews.data.pagination.GetArticleRxPagingSource
 import com.mohammadhashem.lastnews.data.repository.articles.datasource.chache.DataSourceCacheArticles
+import com.mohammadhashem.lastnews.domain.repository.ArticlePagingRepository
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
 class ArticlePagingRepositoryImpl@Inject constructor(private val api: ApiNews,
-                                                     private val cache: DataSourceCacheArticles): ArticlePagingRepository {
+                                                     private val cache: DataSourceCacheArticles):
+    ArticlePagingRepository {
     override fun getArticles(sourceId:String): Flowable<PagingData<Article>> {
         return Pager(
             config = PagingConfig(

@@ -1,4 +1,4 @@
-package com.mohammadhashem.lastnews.data.repository.sources
+package com.mohammadhashem.lastnews.domain.repository
 
 import com.mohammadhashem.lastnews.data.model.SourcesResponse
 import io.reactivex.rxjava3.core.Single

@@ -1,10 +1,10 @@
 package com.mohammadhashem.lastnews.data.di
 
-import com.mohammadhashem.lastnews.data.repository.articles.ArticlePagingRepository
+import com.mohammadhashem.lastnews.domain.repository.ArticlePagingRepository
 import com.mohammadhashem.lastnews.data.repository.articles.ArticlePagingRepositoryImpl
 //import com.mohammadhashem.lastnews.data.repository.articles.ArticlesRepository
 //import com.mohammadhashem.lastnews.data.repository.articles.ArticlesRepositoryImpl
-import com.mohammadhashem.lastnews.data.repository.sources.SourcesRepository
+import com.mohammadhashem.lastnews.domain.repository.SourcesRepository
 import com.mohammadhashem.lastnews.data.repository.sources.SourcesRepositoryImpl
 import dagger.Binds
 import dagger.Module

@@ -1,4 +1,4 @@
-package com.mohammadhashem.lastnews.data.repository.articles
+package com.mohammadhashem.lastnews.domain.repository
 
 import androidx.paging.PagingData
 import com.mohammadhashem.lastnews.data.model.Article

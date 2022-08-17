@@ -1,8 +1,8 @@
 package com.mohammadhashem.lastnews.domain.di
 
 //import com.mohammadhashem.lastnews.data.repository.articles.ArticlesRepository
-import com.mohammadhashem.lastnews.data.repository.articles.ArticlePagingRepository
-import com.mohammadhashem.lastnews.data.repository.sources.SourcesRepository
+import com.mohammadhashem.lastnews.domain.repository.ArticlePagingRepository
+import com.mohammadhashem.lastnews.domain.repository.SourcesRepository
 import com.mohammadhashem.lastnews.domain.usecases.articles.*
 import com.mohammadhashem.lastnews.domain.usecases.sources.AllUseCasesSource
 import com.mohammadhashem.lastnews.domain.usecases.sources.GetSourceRemoteUseCase
